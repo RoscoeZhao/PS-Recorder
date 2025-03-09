@@ -1,0 +1,152 @@
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+
+// 语言资源
+const resources = {
+  zh: {
+    translation: {
+      "export_error_msg": "导出视频失败: ",
+      "export_complete_msg": "导出视频成功！\n视频已保存到: \n",
+      "generator_event_error_msg": "处理事件失败: ",
+      "open_directory_error_msg": "打开文件夹失败: ",
+      "select_directory_msg": "请选择保存文件夹",
+      "input_path_msg": "请选择过程截图所在文件夹",
+      "output_path_msg": "请选择导出文件夹",
+      "no_image_msg": "当前文件夹未找到过程截图",
+      "install_generator_title": "安装PS Recorder Generator",
+      "install_generator_help": "请将ps-recorder-generator放在：\n[PS文件夹]/Plug-ins/Generator/\n文件夹中",
+      "connecting": "正在连接...",
+      "not_connected": "Generator未连接",
+      "recording": "正在录制",
+      "start_recording": "开始录制",
+      "save_path": "保存路径",
+      "save_path_msg": "请选择过程截图保存路径",
+      "select_folder": "选择文件夹", 
+      "open_folder": "打开文件夹",
+      "min_interval": "最短间隔(秒)",
+      "min_interval_title": "最短截取间隔时间",
+      "min_interval_help": "录制过程中，每当画布变化时会截存一份过程截图。\n如果画布很大或作画时间很长，适当增加间隔时间，可以提升性能、降低空间占用。",
+      "capture_mode": "截取模式",
+      "capture_mode_title": "截取模式",
+      "capture_mode_help": "平衡：推荐。适合大多数情况。\n压缩：节约空间，截图间隔长。适合磁盘空间有限的情况。\n高画质：画质高，占用空间大。适合画布小或追求录制高画质的情况。",
+      "balanced": "平衡",
+      "compressed": "压缩",
+      "quality": "高画质",
+      "export_video": "导出视频",
+      "input_path": "过程截图文件夹",
+      "duration": "视频时长(秒)",
+      "resolution": "分辨率",
+      "aspect_ratio": "宽高比",
+      "progress": "导出进度",
+      "original": "原图",
+      "select": "选择",
+      "export": "导出",
+      "cancel": "取消",
+      "roscoe": "开发者: RoscoeZhao",
+      "about_title": "PS Recorder v1.1",
+      "about_content": "·这是一个免费开源项目。联系或赞助作者可以点击下方链接。\n·初次使用时，请先配置过程截图保存路径。\n·每个画布录制的过程会分别保存到:\n[选择的路径]\\[画布名称] 文件夹内。\n·只会在画布变化时自动录制。可以一直开启录制，不必担心空闲时占用内存或磁盘空间。\n\n鸣谢：厭氧TS, xiaoqiang, F-know, Bolt-CEP, DeepSeek"
+    }
+  },
+  en: {
+    translation: {
+      "export_error_msg": "Video export failed: ",
+      "export_complete_msg": "Video exported successfully!\nSaved to:\n",
+      "generator_event_error_msg": "Event processing failed: ",
+      "open_directory_error_msg": "Failed to open folder: ",
+      "select_directory_msg": "Select save folder",
+      "input_path_msg": "Select folder where screenshots are stored",
+      "output_path_msg": "Select export folder", 
+      "no_image_msg": "No screenshots found",
+      "install_generator_title": "Install Generator",
+      "install_generator_help": "Place ps-recorder-generator in:\n[PS folder]/Plug-ins/Generator/",
+      "connecting": "Connecting...",
+      "not_connected": "Generator not connected",
+      "recording": "Recording",
+      "start_recording": "Start Recording",
+      "save_path": "Save Path",
+      "save_path_msg": "Select save location",
+      "select_folder": "Select Folder",
+      "open_folder": "Open Folder",
+      "min_interval": "Min Interval (s)",
+      "min_interval_title": "Capture Interval",
+      "min_interval_help": "Time between auto-captures.\nIncrease for better performance on large canvases.",
+      "capture_mode": "Capture Mode",
+      "capture_mode_title": "Capture Mode",
+      "capture_mode_help": "Balanced: Recommended for most cases.\nCompressed: Reduces file size. Suitable for saving disk space.\nQuality: High image quality. Suitable for small canvases or demands high-quality recordings",
+      "balanced": "Balanced",
+      "compressed": "Compressed",
+      "quality": "Quality",
+      "export_video": "Export Video",
+      "input_path": "Screenshots Folder",
+      "duration": "Duration (s)",
+      "resolution": "Resolution",
+      "aspect_ratio": "Aspect Ratio",
+      "progress": "Progress",
+      "original": "Original",
+      "select": "Select",
+      "export": "Export",
+      "cancel": "Cancel",
+      "roscoe": "Author: RoscoeZhao",
+      "about_title": "PS Recorder v1.1",
+      "about_content": "·This is a free and open-source project. To contact or sponsor the author, please use the links below.\n·When using for the first time, please configure the screenshot save path.\n·Each canvas recording process will be saved in:\n  [Selected Path]\\[Canvas Name] folder.\n·Recording only occurs during canvas changes. You can keep recording enabled without worrying about memory/disk usage during idle time.\n\nSpecial Thanks to: 厭氧TS, xiaoqiang, F-know, Bolt-CEP, DeepSeek"
+    }
+  },
+  ja: {
+    translation: {
+      "export_error_msg": "動画エクスポート失敗: ",
+      "export_complete_msg": "動画のエクスポートが成功しました！\n保存先:\n",
+      "generator_event_error_msg": "イベント処理エラー: ",
+      "open_directory_error_msg": "フォルダを開けません: ",
+      "select_directory_msg": "保存フォルダを選択",
+      "input_path_msg": "スクリーンショットが保存されているフォルダを選択",
+      "output_path_msg": "エクスポート先を選択",
+      "no_image_msg": "スクリーンショットが見つかりません",
+      "install_generator_title": "Generatorのインストール",
+      "install_generator_help": "ps-recorder-generatorを以下に配置:\n[PSフォルダ]/Plug-ins/Generator/",
+      "connecting": "接続中...",
+      "not_connected": "Generator未接続",
+      "recording": "録画中",
+      "start_recording": "録画を開始",
+      "save_path": "保存先",
+      "save_path_msg": "保存フォルダを選択",
+      "select_folder": "フォルダ選択",
+      "open_folder": "フォルダを開く",
+      "min_interval": "最短間隔(秒)",
+      "min_interval_title": "キャプチャ間隔",
+      "min_interval_help": "自動キャプチャの間隔\n大きなキャンバスでは間隔を長く設定",
+      "capture_mode": "キャプチャモード",
+      "capture_mode_title": "キャプチャモード設定",
+      "capture_mode_help": "バランス：推奨。ほとんどの場合に適しています。\n圧縮：ファイルサイズを削減。ストレージ容量が限られている場合に適しています。\n高画質：高画質。小さなキャンバスや高画質の録画に適しています。",
+      "balanced": "バランス",
+      "compressed": "圧縮",
+      "quality": "高画質",
+      "export_video": "動画を出力",
+      "input_path": "スクショフォルダ",
+      "duration": "動画時間(秒)",
+      "resolution": "解像度",
+      "aspect_ratio": "アスペクト比",
+      "progress": "進捗状況",
+      "original": "オリジナル",
+      "select": "選択",
+      "export": "出力",
+      "cancel": "キャンセル",
+      "roscoe": "開発者: RoscoeZhao",
+      "about_title": "PS Recorder v1.1",
+      "about_content": "·本プロジェクトは無料のオープンソースです。作者への連絡・スポンサーは下部リンクから\n·初回使用時には、必ずスクリーンショットの保存先を設定してください\n·各キャンバスの録画データは以下の形式で保存されます：\n[選択したパス]\\[キャンバス名] フォルダ内\n·キャンバス変更時のみ録画されます。操作がない時はメモリ/ディスクを消費しません\n\n感謝: 厭氧TS, xiaoqiang, F-know, Bolt-CEP, DeepSeek"
+    }
+  }
+};
+
+i18n
+  .use(initReactI18next)
+  .init({
+    resources,
+    fallbackLng: 'zh',
+    interpolation: {
+      escapeValue: false
+    },
+    detection: {
+      order: ['navigator', 'htmlTag'],
+      caches: ['cookie']
+    }
+  });
